@@ -3,3 +3,4 @@
 ## Guides
 
 - [ASAP – инструкция для студентов](guides/asap-student-guide.md)
+- [Отправка лабораторных на проверку](guides/create-assignment-submission.md)
