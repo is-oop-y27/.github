@@ -22,14 +22,20 @@ ASAP – система, позволяющая автоматизировать
 загружать ваши работы на протяжении прохождения курса. Приглашение в данный репозиторий придёт вам на почту, к которой
 привязан ваш GitHub аккаунт.
 
-<img src="img/invite-mail.png" align="center"></img>
+<p align="center">
+   <img src="img/invite-mail.png">
+</p>
 
 Также, система предоставляет возможность просмотра баллов и очередей на сдачу через Google таблицы, ссылку на таблицу
 вашего предмета должны предоставить преподаватели.
 
-<img src="img/points-sheet.png" align="center"></img>
+<p align="center">
+   <img src="img/points-sheet.png">
+</p>
 
-<img src="img/queue-sheet.png" align="center"></img>
+<p align="center">
+   <img src="img/queue-sheet.png">
+</p>
 
 # Основной workflow студента
 
