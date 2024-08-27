@@ -64,8 +64,8 @@
 18. Используйте
     подход [Arrange-Act-Assert](https://docs.microsoft.com/ru-ru/visualstudio/test/unit-test-basics?view=vs-2019#write-your-tests)
     при написании ваших тест-кейсов.19. Использовать в тестах специализированные проверки вместо общих, по типу
-                                        `Assert.Contains(…)` вместо `Assert.True(collection.Contains(…))`.
-20. Стараться работать с абстракциями, а не с конкретными видами коллекций
+    `Assert.Contains(…)` вместо `Assert.True(collection.Contains(…))`.
+19. Стараться работать с абстракциями, а не с конкретными видами коллекций
 
 ```csharp
 // Плохо:
