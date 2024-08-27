@@ -1,5 +1,11 @@
 # ООП y27
 
+## Information
+
+- [Syllabus](syllabus.md)
+- [Do/Don'ts](do-donts.md)
+- [Таблица успеваемости/очередей](https://docs.google.com/spreadsheets/d/1Br5JJf_Wh0AfPKngWlVP2sOgzYOJ1wFpAwtZqf93Lec/edit?usp=sharingw)
+
 ## Guides
 
 - [ASAP – инструкция для студентов](guides/asap-student-guide.md)
