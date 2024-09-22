@@ -17,6 +17,7 @@
 
 - [Лекция 1 – основы ООП](lectures/1-oop-basics.pdf)
 - [Лекция 2 – проектирование объектной модели](lectures/2-best-practices.pdf)
+- [Лекция 3 – SOLID](lectures/3-solid.pdf)
 
 ## Лабораторные
 
