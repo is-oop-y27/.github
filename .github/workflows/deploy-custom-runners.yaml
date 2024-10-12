@@ -1,0 +1,71 @@
+name: deploy custom runners
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - '.github/workflows/deploy-custom-runners.yaml'
+      - 'custom-runners/**'
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}/custom-jit-runner
+
+jobs:
+  build-runner-image:
+    runs-on: "custom-runner-host"
+    
+    permissions:
+      packages: write
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup docker buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: login to GitHub docker registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: custom-runners
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          no-cache: true
+  
+  deploy-runners:
+    runs-on: "custom-runner-host"
+    needs: build-runner-image
+    
+    permissions:
+      packages: write
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: login to GitHub docker registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: deploy runners
+        run: |
+          cd custom-runners
+          GITHUB_ORGANIZATION=${{ github.repository_owner }} GITHUB_TOKEN=${{ secrets.RUNNER_PAT_TOKEN }} docker compose up -d 

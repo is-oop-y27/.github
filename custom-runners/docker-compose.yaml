@@ -1,0 +1,12 @@
+services:
+  
+  custom-runner:
+    image: custom-runner-image
+    environment:
+      GITHUB_ORGANIZATION: ${GITHUB_ORGANIZATION}
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    deploy:
+      mode: replicated
+      replicas: 2
+      restart_policy:
+        condition: any
