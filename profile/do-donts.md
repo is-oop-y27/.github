@@ -106,7 +106,7 @@ IEnumerable<T> FindOddNumbers(IReadOnlyCollection<T> numbers) where T : INumber
    количества мест, где происходят проверки во время компиляции.
 7. Минимизировать количество [down casting](https://qna.habr.com/q/448799). Стараться не использовать более общие типы в
    сигнатурах, если они не поддерживаются.
-8. Не использовать Tuple, ValueTuple и KeyValuePair’ы (в т.ч. из словарей) в сигнатурах своих типов или методов.
+8. Не использовать Tuple, ValueTuple и KeyValuePair, Dictionary (I/IReadOnly) в сигнатурах своих типов или методов.
    Используйте свой `Discriminated Union` / `Value Object` / `Data Transfer Object` для передачи множества значений в
    качестве параметров/результатов.
 9. Не оставлять код, который не нужен\не используется
