@@ -21,6 +21,7 @@
 - [Лекция 4 – GRASP](lectures/4-grasp.pdf)
 - [Лекция 5 – Порождающие паттерны](lectures/5-creational-patterns.pdf)
 - [Лекция 6 – Структурные паттерны](lectures/6-structural-patterns.pdf)
+- [Лекция 8 – Архитектуры](lectures/8-layered-architectures.pdf)
 
 ## Лабораторные
 
